@@ -1,15 +1,15 @@
 : prime
-		dup 2 < if drop 0 exit endif
-		dup 2 = if drop 1 exit endif
-		dup 2 % not if drop 0 exit endif 
-		dup 2 / >r
-        repeat
-                dup ( dup initial value )
-				r> ( restore current value )
-                dup 1 - >r ( decrement current value and save in stack )
-                % 
-        not until ( when % resulted 0 )
-        drop r> 0 = ( drop initial value, restore last value -> it should be 0 if initial value is prime )
+	dup 2 < if drop 0 exit endif
+	dup 2 = if drop 1 exit endif
+	dup 2 % not if drop 0 exit endif 
+	dup 2 / >r
+	repeat
+		dup ( dup initial value )
+		r> ( restore current value )
+		dup 1 - >r ( decrement current value and save in stack )
+		% 
+	not until ( when % resulted 0 )
+		drop r> 0 = ( drop initial value, restore last value -> it should be 0 if initial value is prime )
 ;
 
 : prime_allot
